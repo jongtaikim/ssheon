@@ -1,0 +1,189 @@
+@charset "utf-8";
+/* CSS Document */
+
+
+#container{width:100%;}
+
+
+
+/* contents */
+#container #contents{margin:auto;width:1200px; position:relative; padding-bottom:150px}
+#container #contents .title{ overflow:hidden; clear:both; width:1200px; height:80px; margin-top:120px; border-bottom:1px solid #333;}
+
+#container #contents .section{ width:100%}
+#container #contents .section .start{ height:30px; padding:10px 0 0 0; overflow:hidden;}
+#container #contents .section .start .icon{ float:left}
+#container #contents .section .start .icon ul{}
+#container #contents .section .start .icon ul li{ float:left; padding-right:10px;}
+#container #contents .section .start .button{ float:right;}
+#container #contents .section .start .button button{height:32px; width:100px; color:#fff; background-color:#333; border:0; cursor:pointer; padding-bottom:5px;}
+#container #contents .section .calendar{}
+#container #contents .section .calendar .month{ text-align:center; font-size:1.3em; height:20px; padding-bottom:10px;}
+#container #contents .section .calendar .month img{ padding:0 6px 0 6px;}
+#container #contents .section .calendar .caltable{}
+#container #contents .section .calendar .caltable .finish{ color:#a16e6e; font-weight:bold;}
+#container #contents .section .calendar .caltable .wait{color:#6e8aa1; font-weight:bold;}
+#container #contents .section .calendar .caltable table{}
+#container #contents .section .calendar .caltable table .sun{background-color:#a16e6e}
+#container #contents .section .calendar .caltable table .sat{background-color:#6e8aa1}
+#container #contents .section .calendar .caltable table th{ background-color:#888; color:#fff; border-right:1px solid #fff; border-bottom:1px solid #fff;height:40px; font-size:1.1em; }
+#container #contents .section .calendar .caltable table td{ background-color:#eee; border-right:1px solid #fff; border-bottom:1px solid #fff; height:90px; text-align:center; position:relative;}
+#container #contents .section .calendar .caltable table td .day{ position:absolute; top:6px; left:6px; color:#999;}
+#container #contents .section .calendar .caltable button{ background-color:#fff; border:1px solid #ccc; color:#999; padding:4px; width:80px; margin-top:5px; cursor:pointer}
+
+#container #contents .section .sum{ border:1px solid #ccc; padding:32px;}
+#container #contents .section .sum .info{}
+#container #contents .section .sum .info table{ width:100%;}
+#container #contents .section .sum .info table td{ border:1px solid #ccc; height:2px; padding:0 10px 0 10px; }
+#container #contents .section .sum .info table .info_tit{ height:38px; text-align:center; background-color:#888; color:#fff; border:none;}
+#container #contents .section .sum .info table .border_none{ border:none;}
+#container #contents .section .sum .info table .border_left{ border-left:none;}
+#container #contents .section .sum .guest{ padding-top:25px;}
+#container #contents .section .sum .guest table{ text-align:center; width:100%; border:1px solid #ccc; border-left:none; border-bottom:none; margin-top:10px;}
+#container #contents .section .sum .guest{}
+#container #contents .section .sum .guest table td{ border-left:1px solid #ccc; border-bottom:1px solid #ccc;height:38px; }
+#container #contents .section .sum .guest table td select{ margin:0 3px 0 3px; width:60px; border:1px solid #ccc;}
+#container #contents .section .sum .guest table .border_left{ }
+#container #contents .section .sum .choice{ width:100%; padding-top:25px; height:200px;}
+#container #contents .section .sum .choice .option{ width:556px; float:left; }
+#container #contents .section .sum .choice .option .tit{}
+#container #contents .section .sum .choice .option .optionsel{border:1px solid #ccc; margin-top:10px;}
+#container #contents .section .sum .choice .option .optionsel ul{ margin:20px;}
+#container #contents .section .sum .choice .option .optionsel ul li{ height:26px; vertical-align:top;}
+#container #contents .section .sum .choice .option .optionsel ul li input{ vertical-align:-2px; margin:3px;}
+#container #contents .section .sum .choice .option .optionsel ul li .sel_right{ float:right;}
+#container #contents .section .sum .choice .option .optionsel ul li .sel_right select{ width:80px; border:1px solid #ccc;}
+#container #contents .section .sum .choice .amount{ width:556px; float:right;}
+#container #contents .section .sum .choice .amount table{margin-top:10px;border:1px solid #ccc; height:170px;}
+#container #contents .section .sum .choice .amount table td{ padding:20px;}
+#container #contents .section .sum .choice .amount table .amount_tit{ background-color:#eee;}
+#container #contents .section .sum .choice .amount table .amount_txt{ border-left:1px solid #ccc;}
+#container #contents .section .sum .choice .amount table .amount_txt p{ display:inline-block; border-bottom:2px solid #333; padding-bottom:10px;}
+#container #contents .section .sum .choice .amount table .amount_txt .sum_f{font-size:30px; color:#a16e6e}
+#container #contents .section .sum .choice .amount table .amount_txt .sum_f span{ font-size:46px; color:#a16e6e}
+#container #contents .section .nextbtn{ height:32px; margin-top:14px;}
+#container #contents .section .nextbtn button{ height:32px; width:100px; color:#fff; background-color:#333; border:0; margin-left:1100px; cursor:pointer}
+#container #contents .section .nextbtn button span{}
+
+#container #contents .section .garo{height:38px; text-align:center; background-color:#eee; color:#333;}
+#container #contents .section .sero{height:38px; text-align:center; background-color:#eee; color:#333;}
+
+#container #contents .section .last{ border:1px solid #ccc; padding:32px;}
+#container #contents .section .last .tit{ font-size:1.2em; margin-bottom:10px;}
+#container #contents .section .last .tit img{ margin-right:10px;}
+#container #contents .section .last .check{}
+#container #contents .section .last .check table{ width:100%; border:1px solid #ccc; margin-bottom:30px; border-left:none; border-bottom:none}
+#container #contents .section .last .check table td{ border-left:1px solid #ccc; border-bottom:1px solid #ccc;height:38px; padding:0 10px 0 10px; }
+#container #contents .section .last .data{}
+#container #contents .section .last .data table{ width:100%; border:1px solid #ccc; margin-bottom:30px; border-left:none; border-bottom:none}
+#container #contents .section .last .data table td{ border-left:1px solid #ccc; border-bottom:1px solid #ccc;height:38px; padding:0 10px 0 10px; }
+#container #contents .section .last .data table td select{ width:80px; border:1px solid #ccc; height:24px;}
+#container #contents .section .last .data table td input{ width:200px; height:20px; border:1px solid #ccc;}
+#container #contents .section .last .refund{ margin-bottom:30px;}
+#container #contents .section .last .refund p{ line-height:1.4em; padding-bottom:14px;}
+#container #contents .section .last .refund table{ text-align:center; width:100%; border:1px solid #ccc; border-left:none; border-bottom:none} 
+#container #contents .section .last .refund table td{ border-left:1px solid #ccc; border-bottom:1px solid #ccc;height:38px; }
+#container #contents .section .last .policy{ line-height:1.5em;}
+#container #contents .section .last .policy b{font-size:1.1em; padding-bottom:3px;}
+#container #contents .section .last .policy .policy_check{ height:30px; padding-top:10px; margin-top:10px; border-top:1px dotted #666;}
+#container #contents .section .last .policy .policy_check input{ vertical-align:-1px;}
+
+#container #contents .confirm{ position:absolute; right:0; top:121px; width:566px; height:470px; background-color:#fff; border:1px solid #ccc;}
+#container #contents .confirm .form{ background-color:#fff; padding:16px 46px 0 46px;}
+#container #contents .confirm .form ul{ padding:20px 0 30px 0; border-bottom:1px solid #999;}
+#container #contents .confirm .form ul li{ height:40px; vertical-align:middle;}
+#container #contents .confirm .form ul li p{ width:130px;height:34px; text-align:right; float:left;vertical-align:middle; font-size:1.1em; padding:6px 10px 0 0;}
+#container #contents .confirm .form ul li input{ border:1px solid #ccc; width:200px; height:28px;}
+#container #contents .confirm .tit{ margin:76px 46px 0 46px; padding:0 0 16px 0; border-bottom:1px solid #333;}
+#container #contents .confirm .form2{ padding:0 46px 0 46px;}
+#container #contents .confirm .sero{height:38px; text-align:center; background-color:#eee; color:#333;}
+#container #contents .confirm .form2 table{width:100%; border:1px solid #ccc;border-left:none; border-bottom:none}
+#container #contents .confirm .form2 table td{border-left:1px solid #ccc; border-bottom:1px solid #ccc;height:38px; padding:0 10px 0 10px; }
+#container #contents .confirm .button{height:32px; margin-top:14px; text-align:center;}
+#container #contents .confirm .button button{height:32px; width:100px; color:#fff; background-color:#333; border:0; cursor:pointer}
+
+#container #contents .section .last .guide{}
+#container #contents .section .last .guide p{ line-height:1.4em; padding-bottom:14px;}
+#container #contents .section .last .guide table{ text-align:center; width:100%; border:1px solid #ccc; border-left:none; border-bottom:none} 
+#container #contents .section .last .guide table td{ border-left:1px solid #ccc; border-bottom:1px solid #ccc;height:38px; }
+#container #contents .section .last .info{}
+#container #contents .section .last .info table{ width:100%; border-top:none; margin-bottom:10px;}
+#container #contents .section .last .info table td{ border:1px solid #ccc; height:2px; padding:0 10px 0 10px; text-align:left; }
+#container #contents .section .last .info table .info_tit{ height:38px; text-align:center; background-color:#eee; color:#333; border-bottom:1px solid #ccc;border-top:1px solid #ccc;border-right:none; }
+#container #contents .section .last .info table .border_none{ border:none;}
+#container #contents .section .last .info table .border_left{ border-right:none;}
+
+
+
+#container #visual{ overflow:hidden;text-align:center; background-color:#333; margin:auto;}
+#container #visual img{ text-align:center;}
+
+/* board */
+#container #contents .post{ padding-top:55px;}
+#container #contents .post .board{ width:1200px; position:relative;}
+#container #contents .post .board table{ width:100%;}
+#container #contents .post .board table tr{ height:40px;}
+#container #contents .post .board table tr th{ background-color:#888; color:#fff;}
+#container #contents .post .board table tr td{ border-bottom:1px solid #ddd; text-align:center; color:#666; cursor:pointer;}
+#container #contents .post .board table tr .boardtit{ border-bottom:1px solid #ddd; height:45px; font-size:1.1em;}
+#container #contents .post .board table tr .tit_center{ height:45px; font-size:1.1em; color:#555; font-weight:bold;}
+#container #contents .post .board table tr .boardtit span{ background-color:#00a0e9; color:#fff; border-radius:10px; padding:2px 10px 3px 10px; font-size:0.9em;}
+#container #contents .post .board table tr .boardtit_left{ border-bottom:1px solid #ddd; height:45px; font-size:1.1em; text-align:left;}
+#container #contents .post .board table tr .tit_left{ text-align:left; color:#555; font-weight:bold;}
+#container #contents .post .board table tr .faq_view{ color:#666; padding:20px 20px 20px 120px; line-height:18px; background-color:#f4f4f4; text-align:left;}
+#container #contents .post .board table tr .board_view{ border:1px solid #ddd; border-top:none; text-align:left; color:#666; padding:20px; line-height:18px;}
+#container #contents .post .board .button{ float:right; margin-top:14px;}
+#container #contents .post .board .button button{height:32px; width:100px; color:#fff; background-color:#333; border:0; cursor:pointer;}
+
+.paging{ margin:auto; width:390px; padding-top:20px;}
+.paging ul{ overflow:hidden; cursor:pointer;} 
+.paging ul li{ float:left; width:28px; height:22px; text-align:center; padding-top:6px; border:1px solid #ccc;font-weight:bold; margin:1px;}
+.paging ul .on{ float:left; width:28px; height:22px; background-color:#333; border:1px solid #333;color:#fff; font-weight:bold;}
+.push{ padding:25px;}
+
+
+/* room */
+#container #contents100{}
+#container #contents100 .room_01{width:100%;margin:0 auto; height:900px; background-color:#333; position:relative; background:url(/asset/front/images/sub/room_01.jpg) bottom center}
+#container #contents100 .room_02{width:100%;margin:0 auto; height:900px; background-color:#333; position:relative; background:url(/asset/front/images/sub/room_02.jpg) bottom center}
+#container #contents100 .room_03{width:100%;margin:0 auto; height:900px; background-color:#333; position:relative; background:url(/asset/front/images/sub/room_03.jpg) bottom center}
+#container #contents100 .room_04{width:100%;margin:0 auto; height:900px; background-color:#333; position:relative; background:url(/asset/front/images/sub/room_04.jpg) bottom center}
+#container #contents100 .room_05{width:100%;margin:0 auto; height:900px; background-color:#333; position:relative; background:url(/asset/front/images/sub/room_05.jpg) bottom center}
+#container #contents100 .room_06{width:100%;margin:0 auto; height:900px; background-color:#333; position:relative; background:url(/asset/front/images/sub/room_06.jpg) bottom center}
+#container #contents100 .room_07{width:100%;margin:0 auto; height:900px; background-color:#333; position:relative; background:url(/asset/front/images/sub/room_07.jpg) bottom center}
+#container #contents100 .room_08{width:100%;margin:0 auto; height:900px; background-color:#333; position:relative; background:url(/asset/front/images/sub/room_08.jpg) bottom center}
+
+#container #contents100 .ex_01{width:100%;margin:0 auto; height:980px; background-color:#333; position:relative; background:url(/asset/front/images/sub/ex_01.jpg) bottom center}
+#container #contents100 .ex_02{width:100%;margin:0 auto; height:900px; background-color:#333; position:relative; background:url(/asset/front/images/sub/ex_02.jpg) bottom center}
+#container #contents100 .ex_03{width:100%;margin:0 auto; height:900px; background-color:#333; position:relative; background:url(/asset/front/images/sub/ex_03.jpg) bottom center}
+#container #contents100 .ex_04{width:100%;margin:0 auto; height:900px; background-color:#333; position:relative; background:url(/asset/front/images/sub/ex_04.jpg) bottom center}
+#container #contents100 .ex_05{width:100%;margin:0 auto; height:900px; background-color:#333; position:relative; background:url(/asset/front/images/sub/ex_05.jpg) bottom center}
+#container #contents100 .ex_06{width:100%;margin:0 auto; height:900px; background-color:#333; position:relative; background:url(/asset/front/images/sub/ex_06.jpg) bottom center}
+
+#container #contents100 .navi{ width:1200px; text-align:center; margin:auto;}
+#container #contents100 .navi ul{ text-align:center; margin:auto; width:160px; padding-top:850px;}
+#container #contents100 .navi ul li{ float:left; background-color:#f3f3f3; width:12px; height:12px; border-radius:6px; font-size:0; margin:4px;}
+#container #contents100 .navi ul .on{ background-color:#333;}
+#container #contents100 .text { width:1200px; text-align:center; margin:auto; position:relative;}
+#container #contents100 .text .prev{ position:absolute; left:0; top:400px; cursor:pointer;}
+#container #contents100 .text .next{ position:absolute; right:0; top:400px; cursor:pointer;}
+
+#container #contents100 .bbq{width:100%;margin:0 auto; height:850px; background-color:#333; position:relative; background:url(/asset/front/images/sub/bbq.jpg) bottom center no-repeat}
+#container #contents100 .outdoor{width:100%;margin:0 auto; height:850px; background-color:#333; position:relative; background:url(/asset/front/images/sub/outdoor.jpg) bottom center no-repeat}
+#container #contents100 .presentation{width:100%;margin:0 auto; height:850px; background-color:#333; position:relative; background:url(/asset/front/images/sub/presentation.jpg) bottom center no-repeat}
+#container #contents100 .campfire{width:100%;margin:0 auto; height:850px; background-color:#333; position:relative; background:url(/asset/front/images/sub/campfire.jpg) bottom center no-repeat}
+#container #contents100 .ssheon{width:100%;margin:0 auto; height:1053px; background-color:#333; position:relative; background:url(/asset/front/images/sub/ssheon.jpg) bottom center no-repeat; margin-bottom:150px;}
+#container #contents100 .ssheon .mvwrap{ width:1200px; position:relative;margin:0 auto;}
+#container #contents100 .ssheon .mvwrap .mv{ background-color:#fff; width:599px; height:337px; position:absolute; top:493px; left:110px;}
+#container #contents100 .tea{width:100%;margin:0 auto; height:1403px; background-color:#333; position:relative; background:url(/asset/front/images/sub/tea.jpg) bottom center no-repeat; margin-bottom:150px;}
+
+
+
+
+
+
+
+
+
+
+

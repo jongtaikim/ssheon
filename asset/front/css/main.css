@@ -1,0 +1,27 @@
+@charset "utf-8";
+/* CSS Document */
+
+#container #contents .visual_01{width:100%;margin:0 auto; height:866px; background-color:#333; position:relative; background:url(/asset/front/images/slide_01.jpg) bottom center}
+#container #contents .visual_02{width:100%;margin:0 auto; height:866px; background-color:#333; position:relative; background:url(/asset/front/images/slide_02.jpg) bottom center}
+#container #contents .visual_03{width:100%;margin:0 auto; height:866px; background-color:#333; position:relative; background:url(/asset/front/images/slide_03.jpg) bottom center}
+#container #contents .visual_04{width:100%;margin:0 auto; height:866px; background-color:#333; position:relative; background:url(/asset/front/images/slide_04.jpg) bottom center}
+
+#container #contents .navi{ width:1200px; text-align:center; margin:auto;}
+#container #contents .navi ul{ text-align:center; margin:auto; width:80px; padding-top:624px;}
+#container #contents .navi ul li{ float:left; background-color:#f3f3f3; width:12px; height:12px; border-radius:6px; font-size:0; margin:4px;}
+#container #contents .navi ul .on{ background-color:#333;}
+
+
+#container #contents{margin:auto;width:100%}
+#container #contents .section{ position:relative; width:1200px;}
+#container #contents .section .tit{width:380px; clear:both; overflow:hidden; position:relative; padding:30px 0 10px 0;}
+#container #contents .section .tit .more{ position:absolute; bottom:10px; right:10px;}
+#container #contents .section .media{}
+#container #contents .section .notice{width:370px;  position:absolute; top:0; left:420px; line-height:1.5em;}
+#container #contents .section .notice span{ text-align:right;width:100px; display:inline; float:right; }
+#container #contents .section .cc{ position:absolute; top:0; left:820px;}
+#container #contents .section .gallery{ height:160px;}
+#container #contents .section .gallery ul{ width:1212px;}
+#container #contents .section .gallery ul li{ float:left; padding-right:12px;}
+
+

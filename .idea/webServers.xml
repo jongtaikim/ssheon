@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="WebServers">
+    <option name="servers">
+      <webServer id="948f3484-c703-4719-b828-cd2bad5e5a96" name="ssheon.co.kr" url="http://ssheon.co.kr">
+        <fileTransfer host="ssheon.co.kr" port="22" rootFolder="/home/hosting_users/ssheon/www/" accessType="SFTP" password="dfc0dfc8df9edf98df99df93df9adf9adf80df80df8b" username="ssheon">
+          <advancedOptions>
+            <advancedOptions dataProtectionLevel="Private" />
+          </advancedOptions>
+          <option name="port" value="22" />
+        </fileTransfer>
+      </webServer>
+    </option>
+  </component>
+</project>

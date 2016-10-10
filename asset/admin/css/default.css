@@ -1,0 +1,26 @@
+@charset "utf-8";
+
+@import url(font-awesome.min.css);
+@import url(layout.css);
+@import url(layout-bootstrap.css);
+
+
+@font-face {
+	font-family: ngeot;
+	src: url(/asset/admin/fonts/NanumGothic.eot);
+}
+
+@font-face {
+	font-family: ngeotBold;
+	src: url(/asset/admin/fonts/NanumGothicExtraBold.eot);
+}
+
+@font-face {
+	font-family: ngttf;
+	src: url(/asset/admin/fonts/NanumGothic.ttf);
+}
+
+@font-face {
+	font-family: ngttfBold;
+	src: url(/asset/admin/fonts/NanumGothicExtraBold.ttf);
+}

@@ -1,0 +1,57 @@
+@charset "utf-8";
+/* CSS Document */
+
+/* reset */
+@font-face{
+font-family: 'NanumGothicWeb'; 
+src: url('/asset/front/fonts/NanumGothic.eot');
+src: local('☺'), url('/asset/front/fonts/NanumGothic.woff') format('woff'), url('/asset/front/fonts/NanumGothic.ttf') format('truetype'); }
+
+body,div,ul,li,dl,dt,dd,ol,p,h1,h2,h3,h4,h5,h6,from{margin:0; padding:0;}
+body{margin:0; padding:0; font-size:78.5%; font-family:"나눔고딕", "NanumGothic", NanumGothicWeb,normal Dotum,Dotum,tahoma,geneva,sans-serif; font-style:normal; color:#333;overflow-y:scroll;}
+ul,ol,dl{list-style:none;}
+
+/* 기본값 설정 */
+a {text-decoration: none;}
+
+ul,li,dl,dt,dd,p,table,tr,th,td,hr{list-style:none;margin:0;padding:0; border:0;}
+img {border:0;vertical-align:top;}
+
+#wrap {width:100%; height:100%;margin:auto;}
+#headerwrap{width:100%;height:180px;margin:0 auto;background-color:#fff;}
+#headerwrap #header{margin:0 auto;width:100%;position:relative;height:180px;}
+#headerwrap #header #logo{ position:relative; width:1200px; height:42px; margin:auto; text-align:center; padding-top:20px;}
+#headerwrap #header #logo .top{ position:absolute; top:20px; right:0;}
+#headerwrap #header #logo .top ul{}
+#headerwrap #header #logo .top ul li{ float:left; margin-left:16px;}
+#headerwrap #header #gnb{position:absolute; top:130px; right:0; width:100%; height:50px; z-index:1000; background-color:#333; }
+#headerwrap #header #gnb ul{ width:1200px; }
+#headerwrap #header #gnb ul li{ float:left; cursor:pointer; padding:14px 35px;}
+#headerwrap #header #gnb .depth1{ margin:0 auto; width:834px; height:54px;}
+#headerwrap #header #lnb{position:absolute; top:180px; right:0; width:100%; height:40px; z-index:1000; background:url(/asset/front/images/lnb_bg.png)}
+#headerwrap #header #lnb ul{ width:1200px; text-align:left; }
+#headerwrap #header #lnb ul li{ float:left; cursor:pointer; padding:12px 20px 9px 0;}
+#headerwrap #header #lnb .depth2_01{ margin:auto; width:1020px; height:38px; padding-left:180px;}
+#headerwrap #header #lnb .depth2_02{ margin:auto; width:920px; height:38px; padding-left:280px;}
+#headerwrap #header #lnb .depth2_03{ margin:auto; width:900px; height:38px; padding-left:300px;}
+#headerwrap #header #lnb .depth2_04{ margin:auto; width:600px; height:38px; padding-left:600px;}
+#headerwrap #header #lnb .depth2_05{ margin:auto; width:490px; height:38px; padding-left:710px;}
+#headerwrap #header #lnb .depth2_06{ margin:auto; width:340px; height:38px; padding-left:860px;}
+
+/* sitemap */
+.sitemapwrap{ background-color:#f3f3f3; height:160px} 
+.sitemapwrap .sitemap{ width:1200px; margin:auto; text-align:left;}
+.sitemapwrap .sitemap ul{ height:120px; border-left:1px solid #ddd; float:left; margin-top:30px; padding:0  85px 0 30px}
+.sitemapwrap .sitemap ul li{ height:24px}
+.sitemapwrap .sitemap ul .sitemap_tt{ margin-bottom:10px;}
+
+/* footer */
+#footerwrap{ background:url(/asset/front/images/footer_bg.png) center ;height:80px; font-size:1em; width:100%; }
+#footerwrap #footer{margin:0 auto;width:1200px; position:relative;clear:both;}
+#footerwrap #footer .logo{ position:absolute; top:20px; left:0; cursor:pointer;}
+#footerwrap #footer .address{ position:absolute; top:30px; right:140px;}
+#footerwrap #footer .icon{position:absolute; top:30px; right:0;}
+#footerwrap #footer .icon ul{}
+#footerwrap #footer .icon ul li{ float:left; margin-right:8px; cursor:pointer;}
+
+
