@@ -1,6 +1,53 @@
 <?php if (!defined('BASEPATH'))
 	exit('No direct script access allowed');
 
+/**
+ *
+ * @property CI_DB_active_record $db
+ * @property CI_DB_forge $dbforge
+ * @property CI_Benchmark $benchmark
+ * @property CI_Calendar $calendar
+ * @property CI_Cart $cart
+ * @property CI_Config $config
+ * @property CI_Controller $controller
+ * @property CI_Email $email
+ * @property CI_Encrypt $encrypt
+ * @property CI_Exceptions $exceptions
+ * @property CI_Form_validation $form_validation
+ * @property CI_Ftp $ftp
+ * @property CI_Hooks $hooks
+ * @property CI_Image_lib $image_lib
+ * @property CI_Input $input
+ * @property CI_Language $language
+ * @property CI_Loader $load
+ * @property CI_Log $log
+ * @property CI_Model $model
+ * @property CI_Output $output
+ * @property CI_Pagination $pagination
+ * @property CI_Parser $parser
+ * @property CI_Profiler $profiler
+ * @property CI_Router $router
+ * @property CI_Session $session
+ * @property CI_Sha1 $sha1
+ * @property CI_Table $table
+ * @property CI_Trackback $trackback
+ * @property CI_Typography $typography
+ * @property CI_Unit_test $unit_test
+ * @property CI_Upload $upload
+ * @property CI_URI $uri
+ * @property CI_User_agent $user_agent
+ * @property CI_Validation $validation
+ * @property CI_Xmlrpc $xmlrpc
+ * @property CI_Xmlrpcs $xmlrpcs
+ * @property CI_Zip $zip
+ *
+ * Add additional libraries you wish
+ * to use in your controllers here
+ *
+ * @property Accounts_model $Accounts_model
+ * @property auth $auth
+ *
+ */
 class Reserve extends CI_Controller {
 
 	function __construct() {
@@ -45,13 +92,32 @@ class Reserve extends CI_Controller {
 
 		if ( $this->param['str_year'] )  $year = $this->param['str_year'] ;
 		if ( $this->param['str_month'] )  $month = $this->param['str_month'] ;
-		
+
+
+
 		$time = strtotime($year.'-'.$month.'-01');
+		$time2 = strtotime($year.'-'.$month.'-31');
 		list($tday, $sweek) = explode('-', date('t-w', $time));  // 총 일수, 시작요일
 		$tweek = ceil(($tday + $sweek) / 7);  // 총 주차from
 		$lweek = date('w', strtotime($year.'-'.$month.'-'.$tday));  // 마지막요일
 
-		$sqlR = " select * from iiop_realpan where idx=1 " ;
+        $varprice_row = $this->db->where('date >= ',date("Y-m-d",$time))->where('date <= ',date("Y-m-d",$time2))->get('iiop_varprice')->result_array();
+
+
+        $i = 0;
+        for($ii=0; $ii<count($varprice_row); $ii++) {
+            if($varprice_row[$ii]['date']) {
+                $vrow[$varprice_row[$ii]['date']]['name'] = $varprice_row[$ii]['price_name'];
+                $vrow[$varprice_row[$ii]['date']]['price'] = $varprice_row[$ii]['price'];
+                $i++;
+            }
+        }
+
+
+
+
+		$sqlR = " select * from iiop_realpan where year = '$year'  " ;
+
 		$rsR = mysql_query ( $sqlR ) ;
 		$rowR = mysql_fetch_array ( $rsR ) ;
 		
@@ -161,55 +227,11 @@ class Reserve extends CI_Controller {
 			$tt = sprintf("%02d", $n++) ;
 			$udate = $year."-".$month."-".$tt ;	
 
-				if ( $udate == '2016-08-14' ) {
-					$varprinc =  '600000' ;
-					$varprincname =  "성수기-주말" ;					
-				} else if (  $udate == '2016-10-02' ) {
-					$varprinc =  '550000' ;
-					$varprincname =  "준성수기-주말" ;					
-				} else if (  $udate == '2016-09-13' || $udate == '2016-09-14' || $udate == '2016-09-15' || $udate == '2016-09-16' || $udate == '2016-09-17' ) {
-					$varprinc =  '550000' ;
-					$varprincname =  "준성수기-주말" ;					
-				} else if (  $udate == '2016-10-08' ) {
-					$varprinc =  '550000' ;
-					$varprincname =  "준성수기-주말" ;					
-				} else if (  $udate == '2016-12-24' ) {
-					$varprinc =  '450000' ;
-					$varprincname =  "비수기-주말" ;					
-				} else if (  $udate == '2016-12-31' ) {
-					$varprinc =  '450000' ;
-					$varprincname =  "비수기-주말" ;					
-				} else if (  $udate == '2017-01-26' || $udate == '2016-01-27' || $udate == '2016-01-28' || $udate == '2016-01-29' || $udate == '2016-01-30' ) {
-					$varprinc =  '450000' ;
-					$varprincname =  "비수기-주말" ;					
-				} else if (  $udate == '2017-02-28' ) {
-					$varprinc =  '450000' ;
-					$varprincname =  "비수기-주말" ;					
-				} else if (  $udate == '2017-05-04' ) {
-					$varprinc =  '550000' ;
-					$varprincname =  "준성수기-주말" ;					
-				} else if (  $udate == '2017-06-05' ) {
-					$varprinc =  '450000' ;
-					$varprincname =  "준성수기-주말" ;					
-				} else if (  $udate == '2017-08-14' ) {
-					$varprinc =  '600000' ;
-					$varprincname =  "성수기-주말" ;					
-				} else if (  $udate == '2017-10-02' || $udate == '2017-10-03'  ) {
-					$varprinc =  '550000' ;
-					$varprincname =  "준성수기-주말" ;					
-				} else if (  $udate == '2017-10-04' || $udate == '2017-10-05'  ) {
-					$varprinc =  '500000' ;
-					$varprincname =  "준성수기-평일" ;					
-				} else if (  $udate == '2017-10-08' ) {
-					$varprinc =  '550000' ;
-					$varprincname =  "준성수기-주말" ;					
-				} else if (  $udate == '2017-12-19' ) {
-					$varprinc =  '450000' ;
-					$varprincname =  "비수기-주말" ;					
-				} else if (  $udate == '2017-12-24' ) {
-					$varprinc =  '450000' ;
-					$varprincname =  "비수기-주말" ;					
-				}
+                if($vrow[$udate]){
+                    $varprinc =  $vrow[$udate]['price'] ;
+                    $varprincname =  $vrow[$udate]['name'] ;
+                }
+
 
 
 
