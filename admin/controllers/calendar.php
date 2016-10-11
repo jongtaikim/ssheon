@@ -98,8 +98,18 @@ class Calendar extends CI_Controller {
 			$tt = sprintf("%02d", $n++) ;
 			$udate = $year."-".$month."-".$tt ;
 
-                unset($varprinc);
-                unset($varprincname);
+            unset($varprinc);
+            unset($varprincname);
+
+           /*     if($year >2016){
+                    if(($month >=3 && $month <=10) || $month == 12){
+                        $varprinc =  $vrow[$udate]['price'] ;
+                        $varprincname =  $vrow[$udate]['name'] ;
+                    }
+                }*/
+
+
+
                 if($vrow[$udate]){
                     $varprinc =  $vrow[$udate]['price'] ;
                     $varprincname =  $vrow[$udate]['name'] ;

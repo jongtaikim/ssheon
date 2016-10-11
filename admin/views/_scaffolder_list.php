@@ -21,6 +21,8 @@ $sch_text_info = substr($sch_text_info,0,strlen($sch_text_info)-3);
 
             $http.get('/admin/'+id + '/list_json?per_page=<?=$_GET['per_page']?>&keyword=<?=$_GET['keyword']?>&config_id=<?=$_GET['config_id']?><?=$sch_text?>')
                 .then(function(res){
+
+
                     $scope.items = res.data.items;
                     //$scope.pagehtml = res.data.pagehtml;
                     table_list_data =  res.data;
@@ -74,7 +76,7 @@ $sch_text_info = substr($sch_text_info,0,strlen($sch_text_info)-3);
 
 <script src="/asset/js/angular.min.js" type="text/javascript"></script>
 
-<div class="padding hide animated fadeInDown" id="data_body" style="<? if($width){?>width:<?=$width?>;<?=$style?><?}?>">
+<div class="padding <? if(!$_GET['ajax']){?>hide<?}?>  fadeInDown" id="data_body" style="<? if($width){?>width:<?=$width?>;<?=$style?><?}?>">
 
 
         <?if($total_box){?>
@@ -213,6 +215,22 @@ $sch_text_info = substr($sch_text_info,0,strlen($sch_text_info)-3);
         });
     }
 
+    function list_page_view(url) {
+        //encodeURIComponent()
+        $.ajax({
+        type: 'GET',
+        url: url,
+        data:'&ajax=y',
+        dataType: 'html',
+        	success: function(html, status) {
+                $('#content_body').html(html);
+        	},
+        	error: function(request,status,error) {
+        		alert(request.responseText);
+        	}
+        });
+    }
+
     function page_init(data) {
 
         if(data.total >0) {
@@ -224,7 +242,7 @@ $sch_text_info = substr($sch_text_info,0,strlen($sch_text_info)-3);
             $('.pagination > li > a').each(function () {
                 if ($(this).attr('href')) {
                     var ast = explode("?", location.hash);
-                    $(this).attr('href', ast[0] + "?" + str_replace("?", "", $(this).attr('href')));
+                    $(this).attr('href', "javascript:list_page_view('"+ast[0] + "?" + str_replace("?", "", $(this).attr('href'))+"');");
                 }
             });
 
@@ -233,7 +251,7 @@ $sch_text_info = substr($sch_text_info,0,strlen($sch_text_info)-3);
 
         }else{
 
-            //$('#items_tbody').html('<tr><td colspan="10" class="text-center">데이터가 없습니다.</td></tr>');
+            $('#items_tbody').html('<tr><td colspan="<?=count($fields)+1?>" class="text-center">데이터가 없습니다.</td></tr>');
         }
 
 

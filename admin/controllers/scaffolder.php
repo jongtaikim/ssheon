@@ -28,7 +28,12 @@ abstract class Scaffolder extends CI_Controller
         parent::__construct();
 
         $this->layout = 'default_bt';
-        $this->yield = true;
+        if(!$_GET['ajax']){
+            $this->yield = true;
+        }else{
+            $this->yield = false;
+        }
+
         $this->type = "admin" ;
 
         // $uri_s = uri_string();

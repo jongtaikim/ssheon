@@ -84,7 +84,7 @@
 				</div>
 			</div><!--layout-west-->
 			<div class="layout-east">
-				<div class="area-body" style="padding:0px;width:99%">
+				<div class="area-body" style="padding:0px;width:99%" id="content_body">
 				{yield}
 				</div>
 			</div>		

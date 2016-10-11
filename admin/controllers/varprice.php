@@ -14,12 +14,12 @@ class Varprice extends Scaffolder {
 
         //레이아웃 파일 설정
         $this->layout = 'default_bt';
-        $this->yield = true;
+
         $this->type = "admin" ;
         check_session();
         $this->left = 'left3' ;
 
-        $this->yield = true;
+     
 
         $this->param = $this->input->post(NULL, true);
     }
@@ -68,7 +68,7 @@ class Varprice extends Scaffolder {
     public function _list_db_get()
     {
         $row_data = $this->_listPageingRow($this->table_tn,$where='',$orderby=" order by no desc");
-        for($ii=0; $ii<count($row_data['data']); $ii++) {
+   for($ii=0; $ii<count($row_data['data']); $ii++) {
             $row_data['data'][$ii]['price'] = number_format($row_data['data'][$ii]['price']);
         }
         return $row_data;
@@ -144,6 +144,69 @@ class Varprice extends Scaffolder {
         $rw = $this->db->delete($this->table_tn);
         return $rw;
     }
+
+    public function eventday(){
+
+            $time = strtotime($date);
+            $ch = curl_init();
+            curl_setopt($ch,CURLOPT_URL,'https://apis.sktelecom.com/v1/eventday/days?type=h&year=2016');
+            curl_setopt($ch,CURLOPT_SSL_VERIFYPEER,false);
+            curl_setopt($ch,CURLOPT_SSLVERSION,3);
+            curl_setopt($ch,CURLOPT_HEADER,0);
+            curl_setopt($ch,CURLOPT_POST,0);
+            curl_setopt($ch,CURLOPT_TIMEOUT,30);
+            curl_setopt($ch,CURLOPT_RETURNTRANSFER,1);
+            curl_setopt($ch,CURLOPT_HTTPHEADER,array(
+                'TDCProjectKey: e849a223-73a3-4daa-9521-f49ea55c420a',
+                'Accept: application/json'
+            ));
+            $result = curl_exec($ch);
+            curl_close($ch);
+
+            $data = json_decode($result,true);
+
+
+
+        $row = $data['results'];
+        print_r($data);
+
+        for($ii=0; $ii<count($row); $ii++) {
+            $date = $row[$ii]['year']."-".$row[$ii]['month']."-".$row[$ii]['day'];
+
+            $is_data = $this->db->where('date',$date)->get($this->table_tn)->row_array();
+
+            print_r($is_data);
+
+            $this->db->set('date',$date);
+        	$this->db->set('price_name',$row[$ii]['name']);
+            if(($row[$ii]['month']+0) >="3" && ($row[$ii]['month']+0) <="10"){
+                $this->db->set('price','600000');
+            }
+
+            if(($row[$ii]['month']+0) =="12"){
+                $this->db->set('price','600000');
+            }
+
+            if(($row[$ii]['month']+0) =="1" || ($row[$ii]['month']+0) =="2" || ($row[$ii]['month']+0) =="11"){
+                $this->db->set('price','500000');
+            }
+
+            $this->db->set('created','NOW()',false);
+
+            if(!$is_data){
+                $this->db->insert($this->table_tn);
+            }else{
+                $this->db->where('date',$date);
+                $this->db->update($this->table_tn);
+            }
+            echo $this->db->last_query()."\n\n";
+
+
+        }
+        exit;
+    }
+
+
 
 
 }

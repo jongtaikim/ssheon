@@ -142,65 +142,90 @@ class Reserve extends CI_Controller {
 		for ($k=0; $k<7; $k++): 
 
 // 0월 1 2 3 4 금 5 토  6 일
+            
+            if($year < 2017) {
 
-			if ( $month == '04' || $month == '05' || $month == '09' || $month == '10') {
-				switch ( $k ) {
-					case 5 :
-						$varprinc =  $rowR['afriday'] ;
-						$varprincname =  "준성수기-금요일" ;
-					break ;
-					case 6 :
-						$varprinc =  $rowR['aweekend'] ;
-						$varprincname =  "준성수기-주말" ;
-					break ;	
-					case 0 :
-						$varprinc =  $rowR['aweekday'] ;
-						$varprincname =  "준성수기-평일" ;
-					break ;						
-					default :
-						$varprinc =  $rowR['aweekday'] ;
-						$varprincname =  "준성수기-평일" ;
-					break;				
-				}
-			} else if ( $month == '07' || $month == '08' ) {
-				switch ( $k ) {
-					case 5 :
-						$varprinc =  $rowR['pfriday'] ;
-						$varprincname =  "성수기-금요일" ;
-					break ;
-					case 6 :
-						$varprinc =  $rowR['pweekend'] ;
-						$varprincname =  "성수기-주말" ;
-					break ;	
-					case 0 :
-						$varprinc =  $rowR['pweekday'] ;
-						$varprincname =  "성수기-평일" ;
-					break ;						
-					default :
-						$varprinc =  $rowR['pweekday'] ;
-						$varprincname =  "성수기-평일" ;
-					break;				
-				}
-			} else {
-				switch ( $k ) {
-					case 5 :
-						$varprinc =  $rowR['dfriday'] ;
-						$varprincname =  "비수기-금요일" ;
-					break ;
-					case 6 :
-						$varprinc =  $rowR['dweekend'] ;
-						$varprincname =  "비수기-주말" ;
-					break ;	
-					case 0 :
-						$varprinc =  $rowR['dweekday'] ;
-						$varprincname =  "비수기-평일" ;
-					break ;						
-					default :
-						$varprinc =  $rowR['dweekday'] ;
-						$varprincname =  "비수기-평일" ;
-					break;				
-				}
-			}
+                if ($month == '04' || $month == '05' || $month == '09' || $month == '10') {
+                    switch ($k) {
+                        case 5 :
+                            $varprinc = $rowR['afriday'];
+                            $varprincname = "준성수기-금요일";
+                            break;
+                        case 6 :
+                            $varprinc = $rowR['aweekend'];
+                            $varprincname = "준성수기-주말";
+                            break;
+                        case 0 :
+                            $varprinc = $rowR['aweekday'];
+                            $varprincname = "준성수기-평일";
+                            break;
+                        default :
+                            $varprinc = $rowR['aweekday'];
+                            $varprincname = "준성수기-평일";
+                            break;
+                    }
+                } else if ($month == '07' || $month == '08') {
+                    switch ($k) {
+                        case 5 :
+                            $varprinc = $rowR['pfriday'];
+                            $varprincname = "성수기-금요일";
+                            break;
+                        case 6 :
+                            $varprinc = $rowR['pweekend'];
+                            $varprincname = "성수기-주말";
+                            break;
+                        case 0 :
+                            $varprinc = $rowR['pweekday'];
+                            $varprincname = "성수기-평일";
+                            break;
+                        default :
+                            $varprinc = $rowR['pweekday'];
+                            $varprincname = "성수기-평일";
+                            break;
+                    }
+                } else {
+                    switch ($k) {
+                        case 5 :
+                            $varprinc = $rowR['dfriday'];
+                            $varprincname = "비수기-금요일";
+                            break;
+                        case 6 :
+                            $varprinc = $rowR['dweekend'];
+                            $varprincname = "비수기-주말";
+                            break;
+                        case 0 :
+                            $varprinc = $rowR['dweekday'];
+                            $varprincname = "비수기-평일";
+                            break;
+                        default :
+                            $varprinc = $rowR['dweekday'];
+                            $varprincname = "비수기-평일";
+                            break;
+                    }
+                }
+
+            }else{
+                $varprice_month = $this->db->where('year',$year)->where('month',$month)->get('iiop_varprice_month')->row_array();
+                switch ($k) {
+                    case 5 :
+                        $varprinc = $varprice_month['price2'];
+                        $varprincname = $varprice_month['price_name']."-금요일";
+                        break;
+                    case 6 :
+                        $varprinc = $varprice_month['price2'];
+                        $varprincname = $varprice_month['price_name']."-주말";
+
+                        break;
+                    case 0 :
+                        $varprinc = $varprice_month['price'];
+                        $varprincname = $varprice_month['price_name']."-평일";
+                        break;
+                    default :
+                        $varprinc = $varprice_month['price'];
+                        $varprincname = $varprice_month['price_name']."-평일";
+                        break;
+                }
+            }
 
 			switch (  $k ) {
 				case 6 :
@@ -225,7 +250,7 @@ class Reserve extends CI_Controller {
 			}
 
 			$tt = sprintf("%02d", $n++) ;
-			$udate = $year."-".$month."-".$tt ;	
+			$udate = $year."-".$month."-".$tt ;
 
                 if($vrow[$udate]){
                     $varprinc =  $vrow[$udate]['price'] ;
