@@ -51,8 +51,8 @@ class Varprice extends Scaffolder {
         // 속성값은 scaffoler.php의 상단 주석 참고.
         //-------------------------------------------------------------------
         $this->data['fields'] = array(
-            'date'=>array('title'=>'날짜','type'=>'date', 'rule'=>'required', 'list_hide'=>false,'list_style'=>'text-align:center;color:blue','placeholder'=>'0000-00-00'),
-            'price_name'=>array('title'=>'가격명','type'=>'select','options' => $price_names,'list_style'=>'text-align:center;width:200px','rule'=>'required'),
+            'date'=>array('title'=>'날짜','type'=>'input', 'rule'=>'required', 'list_hide'=>false,'list_style'=>'text-align:center;color:blue','placeholder'=>'0000-00-00'),
+            'price_name'=>array('title'=>'가격명','type'=>'input','options' => $price_names,'list_style'=>'text-align:center;width:200px','rule'=>'required'),
             'price'=>array('title'=>'가격','type'=>'number','list_style'=>'text-align:center;width:300px','label'=>'원','rule'=>'required','placeholder'=>'000,000'),
 
             'created'=>array('title'=>'생성일','type'=>'now','list_style'=>'text-align:center;;'),

@@ -29,7 +29,7 @@ $(document).ready(function (){
 						alert(word+"하였습니다.");
 
 
-                        document.location.href="/admin/<?=$schema['id']?>/index";
+                       location.reload();
 
 					}
 				}
@@ -57,7 +57,7 @@ $(document).ready(function (){
 						alert("삭제하였습니다.");
 
 
-                        document.location.href="/admin/<?=$schema['id']?>/index";
+                        location.reload();
 
 					}
 				}
