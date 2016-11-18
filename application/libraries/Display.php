@@ -41,9 +41,11 @@ class Display extends Template_ {
 
 
         $this->layout = $conf;
-		$layout_conf = parse_ini_file($_file,true);
+
+        $layout_conf = parse_ini_file($_file,true);
         $layers = $layout_conf[$this->layout];
 		@array_walk($layers,array(&$this,'cb_apply_theme'));
+        
         $this->define($layers);
 
 	}
@@ -68,18 +70,21 @@ class Display extends Template_ {
 	function getTemplate($filename) {
 	
 		$tpl_order = array(
-
+            './mobile/layouts/'.$filename,
+            './mobile/views/'.$filename,
 			$this->application_folder.'/config/'.$filename,
             $this->application_folder.'/views/'.$filename,
+
+
 		);
 		
 
 
 		for ($i=0,$cnt=count($tpl_order); $i<$cnt;$i++) {
 			$template = $tpl_order[$i];
-		//	echo $template."<br>";
-			if (!is_file($template)) continue;
-			
+           // echo realpath($template)."<br>";
+			if (!is_file($template))  continue;
+
 			return $template;
 			break;
 		}

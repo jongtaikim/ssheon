@@ -1,0 +1,47 @@
+
+<div id="contents">
+    <div class="title"><img src="/mobile/views/images/sub/tt_notice.jpg"></div>
+    <div class="table wow fadeInDown">
+        <table width="100%" border="0" cellpadding="0" cellspacing="0">
+            <colgroup>
+                <col width="15%">
+                <col width="60%">
+                <col width="25%">
+            </colgroup>
+            <tr>
+                <th class="text-center">번호</th>
+                <th class="text-center">제목</th>
+                <th class="text-center">날짜</th>
+            </tr>
+            {@loopno}
+            <tr>
+                <td>공지</td>
+                <td class="text_left"><a href="/front/board/v/{board_id}?page={page}&idx={.idx}">{.title}</a></td>
+                <td>{=substr(.udate,2,8)}</td>
+            </tr>
+            {/}
+
+            {@loop}
+            <tr>
+                <td>{.idx}</td>
+                <td class="text_left"><a href="/front/board/v/{board_id}?page={page}&idx={.idx}">{.title}</a></td>
+                <td>{=substr(.udate,2,8)}</td>
+            </tr>
+            {/}
+
+        </table>
+        <div class="button">
+            <ul>
+                <li class="prev"><button type="button" onclick="go_url('/front/board/lists/{board_id}?page={paging.prev}&title={title}');"><span>이전</span></button></li>
+                <li class="next"><button type="button" onclick="go_url('/front/board/lists/{board_id}?page={paging.next}&title={title}');"><span>다음</span></button></li>
+            </ul>
+
+
+        </div>
+    </div>
+</div>
+<script type="text/javascript">
+function go_url(url) {
+    location.href=url;
+}
+</script>

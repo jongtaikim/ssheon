@@ -2,16 +2,28 @@
 
 class Board extends CI_Controller {
 
-	function __construct() {
+    var $layout_mode = "";
+
+    function __construct() {
 		parent::__construct();
 
 //		$this->load->model(array('Boardclass'));
 		$this->load->model(array('../../admin/models/Boardclass'));
 		//레이아웃 파일 설정
-		$this->layout = 'maindefault';
-		$this->yield = true;
-		$this->type = "front" ;
-		
+
+        if(MobileCheck()){
+            $this->yield = false;
+            $this->layout_mobile = true;
+
+            $this->load->library('Display');
+            $this->display->setLayout('main');
+
+        }else {
+            $this->layout = 'maindefault';
+            $this->yield = true;
+            $this->type = "front";
+        }
+
 		$this->param = $this->input->post(NULL, true);
 		$this->getparam = $this->input->get(NULL, true);
 	}
@@ -40,7 +52,7 @@ class Board extends CI_Controller {
 
 	function lists() {						
 
-		$this->yield = true;		
+
 
 //		echo $this->param['title'] ;
 		/*
@@ -83,7 +95,7 @@ class Board extends CI_Controller {
 		$whereno[] = "code = '".$this->uri->segment(4)."' " ;
 		$whereno[] = "notice = 'Y' " ;
 		$resultno = $this->Boardclass->bbs_list( $whereno );
-
+        
 		$loopno = array();
 		foreach ( $resultno as $i=>$rowno ) {
 			$loopno[] = $rowno;
@@ -100,13 +112,29 @@ class Board extends CI_Controller {
 		$this->load->library('Pagination_lib', $paging_config, 'pagination');
 		$paging = $this->pagination->getPageSet();
 
-		$data = array('loop'=>$loop,'loopno'=>$loopno,'total_record'=>$total_record,'paging'=>$paging,'page'=>$page,'title'=>$this->getparam['title'] );
-		$this->load->view($this->type."/board/lists" , $data);				
+      
+
+		$data = array('loop'=>$loop,'loopno'=>$loopno,'total_record'=>$total_record,'paging'=>$paging,'page'=>$page,'title'=>$this->getparam['title'],'board_id'=>$this->uri->segment(4) );
+
+        if( $this->layout_mobile){
+
+
+            $this->display->assign($data);
+            $this->display->assign('paging',$paging);
+            $this->display->define('CONTENT', $this->display->getTemplate('/board/lists.html'));
+            $content = $this->display->fetch('LAYOUT');
+            echo $content;
+
+        }else{
+            $this->load->view($this->type."/board/lists" , $data);
+
+        }
+
 	}
 
 	function v() {
 
-		$this->yield = true;	
+
 		$row = $this->Boardclass->get_view( $this->getparam['idx'] ) ;		
 	
 		if ( $row['code'] =='faq' && $row['secret']=='Y' ) {
@@ -119,20 +147,32 @@ class Board extends CI_Controller {
 
 		$this->Boardclass->update_hit( $this->getparam['idx'] ) ;
 
-		$data = array( 'row'=>$row ,'page'=>$this->getparam['page']  , 'settle_file'=>$settle_file );
-		$this->load->view($this->type."/board/view" , $data);	
+		$data = array( 'row'=>$row ,'page'=>$this->getparam['page']  , 'settle_file'=>$settle_file,'board_id'=>$this->uri->segment(4) );
+
+        if( $this->layout_mobile){
+
+
+            $this->display->assign($data);
+            $this->display->assign('paging',$paging);
+            $this->display->define('CONTENT', $this->display->getTemplate('/board/view.html'));
+            $content = $this->display->fetch('LAYOUT');
+            echo $content;
+
+        }else {
+            $this->load->view($this->type . "/board/view", $data);
+        }
 	}
 
 	function pwd() {
 
-		$this->yield = true;	
+
 
 		$this->load->view($this->type."/board/pwd" , $data);	
 	}
 
 	function write() {
 
-		$this->yield = true;	
+
 		$this->load->helper('ckeditor');	
 
 		if ( $this->getparam['idx'] != "" ) :
@@ -176,7 +216,7 @@ class Board extends CI_Controller {
 */	
 
 	function pwd_act() {
-		$this->yield = false;	
+		$this->yield = false;
 
 		$row = $this->Boardclass->get_view( $this->param['inout_no'] ) ;	
 
@@ -194,7 +234,7 @@ class Board extends CI_Controller {
 	}
 
 	private function _call_json($is_valid ) {
-		$this->yield = false;	
+		$this->yield = false;
 		$json = null;
 		$json['is_valid'] = $is_valid;
 		
