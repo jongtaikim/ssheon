@@ -1,66 +1,66 @@
 <!doctype html>
-<html>
-<head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=9"/>
-    <meta name="viewport" content="width=device-width, initial-scale=0.8, maximum-scale=0.8, user-scalable=no">
+    <html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=9"/>
+        <meta name="viewport" content="width=device-width, initial-scale=0.8, maximum-scale=0.8, user-scalable=no">
+        <meta name="theme-color" content="#008275">
+
+        <script src="/asset/admin/js/jquery-1.11.1.min.js"></script>
+        <script src="/asset/admin/js/jquery-ui-1.9.2.custom.js"></script>
+        <script src="/asset/admin/js/jquery.validationEngine-kr.js"></script>
+        <script src="/asset/admin/js/jquery.validationEngine.js"></script>
+        <link rel="stylesheet" href="/asset/animate.css/animate.css" type="text/css" />
+        <link rel="stylesheet" href="/asset/font-awesome/css/font-awesome.min.css" type="text/css" />
+        <link rel="stylesheet" href="/asset/bootstrap-4.0.0-alpha.5-dist/css/bootstrap.css" type="text/css" />
 
 
-    <script src="/asset/admin/js/jquery-1.11.1.min.js"></script>
-    <script src="/asset/admin/js/jquery-ui-1.9.2.custom.js"></script>
-    <script src="/asset/admin/js/jquery.validationEngine-kr.js"></script>
-    <script src="/asset/admin/js/jquery.validationEngine.js"></script>
-    <link rel="stylesheet" href="/asset/animate.css/animate.css" type="text/css" />
-    <link rel="stylesheet" href="/asset/font-awesome/css/font-awesome.min.css" type="text/css" />
-    <link rel="stylesheet" href="/asset/bootstrap-4.0.0-alpha.5-dist/css/bootstrap.css" type="text/css" />
+        <link rel="stylesheet" href="/asset/styles/app.css" type="text/css" />
+        <link rel="stylesheet" href="/asset/styles/now_to.css" type="text/css" />
 
+        <link rel="stylesheet" href="/asset/libs/jquery/select2/dist/css/select2.min.css" type="text/css" />
+        <link rel="stylesheet" href="/asset/libs/jquery/select2-bootstrap-theme/dist/select2-bootstrap.min.css" type="text/css" />
+        <link rel="stylesheet" href="/asset/libs/jquery/select2-bootstrap-theme/dist/select2-bootstrap.4.css" type="text/css" />
 
-    <link rel="stylesheet" href="/asset/styles/app.css" type="text/css" />
-    <link rel="stylesheet" href="/asset/styles/now_to.css" type="text/css" />
-
-    <link rel="stylesheet" href="/asset/libs/jquery/select2/dist/css/select2.min.css" type="text/css" />
-    <link rel="stylesheet" href="/asset/libs/jquery/select2-bootstrap-theme/dist/select2-bootstrap.min.css" type="text/css" />
-    <link rel="stylesheet" href="/asset/libs/jquery/select2-bootstrap-theme/dist/select2-bootstrap.4.css" type="text/css" />
-
-    {? MAIN}
-    <link rel="stylesheet" href="/mobile/views/css/main.css?v=1" type="text/css" media="screen" />
-    {:}
-    <link rel="stylesheet" href="/mobile/views/css/sub.css" type="text/css" media="screen" />
-    {/}
-
-    <link rel="stylesheet" href="/mobile/views/css/default.css" type="text/css" media="screen" />
-
-    <title>수수헌</title>
-</head>
-<body>
-
-
-<div class="autoheight modal-backdrop opa20" id="backd"></div>
-<div id="wrap">
-    <div id="header" class="">
-        <!-- top -->
-        <div id="top">
-            <div class="top">
-                <div class="logo"><a href="/"><img src="/mobile/views/images/logo.png"></a></div>
-                <div class="menu" id="menu_btn"><a href="javascript:$('#toggle').fadeIn(200);$('#menu_btn').hide()"><img src="/mobile/views/images/btn_toggle.png"></a></div>
-            </div>
-        </div>
-        <!-- top E -->
-        <!-- 메인슬라이드 -->
         {? MAIN}
-        <!-- 메인슬라이드 -->
+        <link rel="stylesheet" href="/mobile/views/css/main.css?v=1" type="text/css" media="screen" />
+        {:}
+        <link rel="stylesheet" href="/mobile/views/css/sub.css" type="text/css" media="screen" />
+        {/}
 
-        <div id="slide" class="carousel    slide"  data-ride="carousel">
-            <ol class="carousel-indicators wow fadeInUp" data-wow-delay="1.5s">
-                <li data-target="#slide" data-slide-to="0" class="active"></li>
-                <li data-target="#slide" data-slide-to="1"></li>
-                <li data-target="#slide" data-slide-to="2"></li>
-            </ol>
-            <ul class="auto carousel-inner carousel-inner_top">
-                <li class="carousel-item active"><div class="text wow fadeInDown" data-wow-delay="1s"><img src="/mobile/views/images/text.png"></div><img src="/mobile/views/images/slide_01.png"></li>
+        <link rel="stylesheet" href="/mobile/views/css/default.css" type="text/css" media="screen" />
 
-                <li class="carousel-item"><img src="/mobile/views/images/slide_02.png"></li>
-                <li class="carousel-item"><img src="/mobile/views/images/slide_03.png"></li>
+        <title>수수헌</title>
+    </head>
+    <body>
+
+
+    <div class="autoheight modal-backdrop opa20" id="backd" ></div>
+    <div id="wrap">
+        <div id="header" class="">
+            <!-- top -->
+            <div id="top">
+                <div class="top">
+                    <div class="logo"><a href="/"><img src="/mobile/views/images/logo.png"></a></div>
+                    <div class="menu" id="menu_btn"><a href="javascript:$('#toggle').fadeIn(200);$('#menu_btn').hide()"><img src="/mobile/views/images/btn_toggle.png"></a></div>
+                </div>
+            </div>
+            <!-- top E -->
+            <!-- 메인슬라이드 -->
+            {? MAIN}
+            <!-- 메인슬라이드 -->
+
+            <div id="slide" class="carousel    slide"  data-ride="carousel">
+                <ol class="carousel-indicators wow fadeInUp" data-wow-delay="1.5s">
+                    <li data-target="#slide" data-slide-to="0" class="active"></li>
+                    <li data-target="#slide" data-slide-to="1"></li>
+                    <li data-target="#slide" data-slide-to="2"></li>
+                </ol>
+                <ul class="auto carousel-inner carousel-inner_top">
+                    <li class="carousel-item active"><div class="text wow fadeInDown" data-wow-delay="1s"><img src="/mobile/views/images/text.png"></div><img src="/mobile/views/images/slide_01.png"></li>
+
+                <li class="carousel-item"><div class="text "><img src="/mobile/views/images/text.png"></div><img src="/mobile/views/images/slide_02.png"></li>
+                <li class="carousel-item"><div class="text "><img src="/mobile/views/images/text.png"></div><img src="/mobile/views/images/slide_03.png"></li>
 
             </ul>
 
@@ -103,7 +103,7 @@
                 <li><a href="tel:010-8924-1352"><img src="/mobile/views/images/btn_call.png"></a></li>
                 <li><a href="http://plus.kakao.com/home/@수수헌" target="_blank"><img src="/mobile/views/images/btn_kakao.png"></a></li>
                 <li><img src="/mobile/views/images/btn_reserve.png"></li>
-                <li class="last"><img src="/mobile/views/images/btn_guide.png"></li>
+                <li class="last"><a href="/front/main/doc/guide"><img src="/mobile/views/images/btn_guide.png"></a></li>
             </ul>
         </div>
     </div>
