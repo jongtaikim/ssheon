@@ -42,6 +42,7 @@ class Varprice_month extends Scaffolder {
             '비수기'=>'비수기',
             '준성수기'=>'준성수기',
             '성수기'=>'성수기',
+            '극성수기'=>'극성수기',
 
             );
 
