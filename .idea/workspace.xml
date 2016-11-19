@@ -2,13 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="86d85eb0-6410-4001-888c-bc0bd8b5c57e" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/mobile/views/reserve/index.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/mobile/views/reserve/write.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/mobile/views/reserve/write_back.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/front/controllers/reserve.php" afterPath="$PROJECT_DIR$/front/controllers/reserve.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/mobile/layouts/mobile_main.php" afterPath="$PROJECT_DIR$/mobile/layouts/mobile_main.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/mobile/views/guide.html" afterPath="$PROJECT_DIR$/mobile/views/guide.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/mobile/views/index.html" afterPath="$PROJECT_DIR$/mobile/views/index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/mobile/views/sshoen.html" afterPath="$PROJECT_DIR$/mobile/views/sshoen.html" />
     </list>
     <ignored path="ssheon.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -30,7 +26,7 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="mobile_main.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="mobile_main.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/mobile/layouts/mobile_main.php">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="629">
@@ -38,6 +34,36 @@
               <folding>
                 <element signature="n#style#0;n#div#2;n#div#2;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="special.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/mobile/views/special.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="51">
+              <caret line="3" column="36" selection-start-line="3" selection-start-column="36" selection-end-line="3" selection-end-column="36" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="sshoen.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/mobile/views/sshoen.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="34">
+              <caret line="2" column="43" selection-start-line="2" selection-start-column="43" selection-end-line="2" selection-end-column="98" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="index.html" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/mobile/views/index.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="153">
+              <caret line="8" column="6" selection-start-line="8" selection-start-column="6" selection-end-line="8" selection-end-column="6" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -85,16 +111,6 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="write.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/front/views/reserve/write.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="442">
-              <caret line="26" column="28" selection-start-line="0" selection-start-column="0" selection-end-line="404" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="write.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/mobile/views/reserve/write.html">
           <provider selected="true" editor-type-id="text-editor">
@@ -125,16 +141,6 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="276">
               <caret line="111" column="54" selection-start-line="111" selection-start-column="48" selection-end-line="111" selection-end-column="54" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="default.css" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/mobile/views/css/default.css">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="476">
-              <caret line="26" column="56" selection-start-line="26" selection-start-column="56" selection-end-line="26" selection-end-column="56" />
               <folding />
             </state>
           </provider>
@@ -184,6 +190,8 @@
         <option value="$PROJECT_DIR$/mobile/views/reserve/index.html" />
         <option value="$PROJECT_DIR$/mobile/views/reserve/write.html" />
         <option value="$PROJECT_DIR$/mobile/layouts/mobile_main.php" />
+        <option value="$PROJECT_DIR$/mobile/views/sshoen.html" />
+        <option value="$PROJECT_DIR$/mobile/views/index.html" />
       </list>
     </option>
   </component>
@@ -453,7 +461,7 @@
       <workItem from="1476170718109" duration="6331000" />
       <workItem from="1476185427951" duration="8109000" />
       <workItem from="1476236129141" duration="1049000" />
-      <workItem from="1479495826351" duration="9775000" />
+      <workItem from="1479495826351" duration="11078000" />
     </task>
     <task id="LOCAL-00001" summary="월별 관리 기능 추가">
       <created>1476197372334</created>
@@ -469,11 +477,18 @@
       <option name="project" value="LOCAL" />
       <updated>1479499875036</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="월별 관리 기능 추가">
+      <created>1479548269526</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1479548269526</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="42211000" />
+    <option name="totallyTimeSpent" value="43514000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="0" width="1535" height="1047" extended-state="0" />
@@ -541,30 +556,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/admin/controllers/varprice.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1071">
-          <caret line="63" column="35" selection-start-line="63" selection-start-column="35" selection-end-line="63" selection-end-column="35" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/admin/layouts/default_bt.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="561">
-          <caret line="33" column="31" selection-start-line="33" selection-start-column="31" selection-end-line="33" selection-end-column="31" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/admin/controllers/scaffolder.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="7803">
-          <caret line="459" column="70" selection-start-line="459" selection-start-column="70" selection-end-line="459" selection-end-column="70" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/admin/views/_scaffolder_list.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -933,6 +924,30 @@
           <folding>
             <element signature="n#style#0;n#div#2;n#div#2;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mobile/views/special.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="51">
+          <caret line="3" column="36" selection-start-line="3" selection-start-column="36" selection-end-line="3" selection-end-column="36" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mobile/views/sshoen.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="34">
+          <caret line="2" column="43" selection-start-line="2" selection-start-column="43" selection-end-line="2" selection-end-column="98" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mobile/views/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="153">
+          <caret line="8" column="6" selection-start-line="8" selection-start-column="6" selection-end-line="8" selection-end-column="6" />
+          <folding />
         </state>
       </provider>
     </entry>
