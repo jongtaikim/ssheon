@@ -49,29 +49,62 @@
  *
  */
 class Reserve extends CI_Controller {
-
-	function __construct() {
+    
+    var $layout_mobile='';
+	
+    function __construct() {
 		parent::__construct();
 
 		$this->load->model(array('../../admin/models/Calendarclass'));
 
-		$this->layout = 'maindefault';
+		
 		$this->param = $this->input->post(NULL, true);
-		$this->type = "front";
+
+        if(MobileCheck()){
+            $this->yield = false;
+            $this->layout_mobile = true;
+        }else{
+            $this->layout = 'maindefault';
+            $this->type = "front";
+        }
 	}
 
-	function index_old() {		
-	
-		$this->yield = true;	
+	function index_old() {
 
-		$this->load->view($this->type.'/reserve/index_old.php', $data);
+        if( $this->layout_mobile){
+
+            $this->load->library('Display');
+            $this->display->setLayout('main');
+
+            $this->display->define('CONTENT', $this->display->getTemplate('/index_old.html'));
+            $content = $this->display->fetch('LAYOUT');
+            echo $content;
+
+        }else {
+            $this->yield = true;
+
+            $this->load->view($this->type . '/reserve/index_old.php', $data);
+
+        }
 	}
 
-	function index() {		
-	
-		$this->yield = true;	
+	function index() {
 
-		$this->load->view($this->type.'/reserve/index.php', $data);
+        if( $this->layout_mobile){
+
+            $this->load->library('Display');
+            $this->display->setLayout('main');
+
+            $this->display->define('CONTENT', $this->display->getTemplate('/reserve/index.html'));
+            $content = $this->display->fetch('LAYOUT');
+            echo $content;
+
+        }else {
+
+            $this->yield = true;
+
+            $this->load->view($this->type . '/reserve/index.php', $data);
+        }
 	}
 
 
@@ -306,28 +339,40 @@ class Reserve extends CI_Controller {
 		$this->load->view($this->type."/reserve/lists" , $data);				
 	}
 
-	function writepage() {						
-		$this->yield = false;
+	function writepage()
+    {
+        $this->yield = false;
 
-		$sqlR = " select * from iiop_realpan where idx=1 " ;
-		$rsR = mysql_query ( $sqlR ) ;
-		$row = mysql_fetch_array ( $rsR ) ;
+        $sqlR = " select * from iiop_realpan where idx=1 ";
+        $rsR = mysql_query($sqlR);
+        $row = mysql_fetch_array($rsR);
 
-		$row['todate'] = $this->param['temp1'] ;
-		$row['uprinc'] = $this->param['temp2'] ;
+        $row['todate'] = $this->param['temp1'];
+        $row['uprinc'] = $this->param['temp2'];
 
-		$result = $this->Calendarclass->re_bbs_list( $where );		
-		$loop = array();
-		foreach ($result as $i=>$rowre) {
-			$loop[] = $rowre;
-		}
-       
+        $result = $this->Calendarclass->re_bbs_list($where);
+        $loop = array();
+        foreach ($result as $i => $rowre) {
+            $loop[] = $rowre;
+        }
 
-		$data = array( "row"=>$row , "loop"=>$loop );
 
-		$this->load->view($this->type."/reserve/write" , $data);				
-	}
+        $data = array("row" => $row, "loop" => $loop);
 
+        if ($this->layout_mobile) {
+
+            $this->load->library('Display');
+
+            $this->display->assign($data);
+            $this->display->define('CONTENT', $this->display->getTemplate('/reserve/write.html'));
+            $content = $this->display->fetch('CONTENT');
+            echo $content;
+
+        } else {
+            $this->load->view($this->type . "/reserve/write", $data);
+
+        }
+    }
 
 	function dateweeks( $srt_date , $end_date ) {
 
@@ -493,8 +538,20 @@ class Reserve extends CI_Controller {
 			exit;
 		endif;
 
-		$data = array( "row"=>$row , "hour"=>$hour_list , "minute"=>$minute_list );		
-		$this->load->view($this->type."/reserve/write_back" , $data);	
+		$data = array( "row"=>$row , "hour"=>$hour_list , "minute"=>$minute_list );
+
+        if ($this->layout_mobile) {
+
+            $this->load->library('Display');
+
+            $this->display->assign($data);
+            $this->display->define('CONTENT', $this->display->getTemplate('/reserve/write_back.html'));
+            $content = $this->display->fetch('CONTENT');
+            echo $content;
+
+        } else {
+            $this->load->view($this->type . "/reserve/write_back", $data);
+        }
 	}
 
 	function calendar_act() {

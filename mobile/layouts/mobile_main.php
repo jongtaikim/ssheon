@@ -4,7 +4,7 @@
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=9"/>
         <meta name="viewport" content="width=device-width, initial-scale=0.8, maximum-scale=0.8, user-scalable=no">
-        <meta name="theme-color" content="#008275">
+        <meta name="theme-color" content="">
 
         <script src="/asset/admin/js/jquery-1.11.1.min.js"></script>
         <script src="/asset/admin/js/jquery-ui-1.9.2.custom.js"></script>
@@ -102,7 +102,7 @@
             <ul>
                 <li><a href="tel:010-8924-1352"><img src="/mobile/views/images/btn_call.png"></a></li>
                 <li><a href="http://plus.kakao.com/home/@수수헌" target="_blank"><img src="/mobile/views/images/btn_kakao.png"></a></li>
-                <li><img src="/mobile/views/images/btn_reserve.png"></li>
+                <li><a href="/front/reserve/index"><img src="/mobile/views/images/btn_reserve.png"></a></li>
                 <li class="last"><a href="/front/main/doc/guide"><img src="/mobile/views/images/btn_guide.png"></a></li>
             </ul>
         </div>
@@ -131,6 +131,11 @@
     function winset() {
         $('.autoheight').height($(window).height());
         $('#footer').css('margin-bottom',$('#bottom').height());
+        if($(window).height() <=400) {
+            $('#bottom').hide();
+        }else{
+            $('#bottom').show();
+        }
         if($(window).height() <=700){
             $('#slide').css('oveflow','hidden').height($(window).height()-$('#bottom').height());
         }
