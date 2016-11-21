@@ -1,0 +1,51 @@
+@charset "utf-8";
+/* CSS Document */
+
+
+/* reset */
+
+body, ul, li, td, th, p,  button, select, img, h1, h2, h3, h4, h5, h6, dl, dt, dd, ol, span, table, tr, td, th{margin:0;padding:0;font-family:"나눔고딕", "NanumGothic", NanumGothicWeb,normal Dotum,Dotum,tahoma,geneva,sans-serif; font-style:normal; color:#333;-webkit-text-size-adjust:none}
+	
+a{text-decoration: none;}
+a img{margin:0;padding:0;border:0;}
+ul li{list-style:none;}
+img{border:0}
+
+html,body{height:100%; min-height:100%}
+body {-webkit-user-select:none;
+	-webkit-touch-callout:none;
+	-webkit-tap-highlight-color: rgba(0,0,0,0);
+	overflow-y: visible !important;} 
+#wrap{ padding-bottom:64px;}
+#wrap{ background-color:#fff; margin:0; padding:0; font-size:78.5%; color:#333;}
+#container{ width:100%;}
+
+
+
+#toggle{ width:100%; height:100%; table-layout:fixed; z-index:1010; background:#998378; opacity:0.9;position:absolute; top:0; right:0; background-size:cover; position:fixed; overflow-y:auto; overflow-x:hidden; -webkit-overflow-scrolling:touch}
+#toggle .toggle{}
+#toggle .toggle ul{ width:60%; height:40%; margin:18% 20% 10% 20%;}
+#toggle .toggle ul li{ color:#fff; text-align:center; font-size:1.6em; line-height:1.7em; border-bottom:1px dotted #bfb0aa; padding: 15px 0 15px 0 }
+#toggle .toggle .menu{position:absolute; top:31px; left:24px;}
+#toggle .toggle .menu img{  width:40px; height:auto;}
+
+
+
+#footerwrap{background-color:#f4f4f4;}
+#footerwrap .banner .room{ width:50%; float:left;padding:0; cursor:pointer}
+#footerwrap .banner .room img{ width:100%; height:auto}
+#footerwrap .banner .tea{ width:50%; float:left;padding:0; cursor:pointer}
+#footerwrap .banner .tea img{width:100%; height:auto}
+#footerwrap #footer{ width:100%; height:0 auto; overflow:hidden; background-color:#eee;text-decoration:none; position:relative; bottom:0;}
+#footerwrap #footer .copy{ width:72%; float:left; padding:6% 2% 6% 2%; line-height:1.3em; font-size:1.1em; color:#666;}
+#footerwrap #footer .copy span{ font-weight:bold; color:#333;}
+#footerwrap #footer .copy span a{ color:#333;}
+#footerwrap #footer .btn{ width:20%; float:right; padding:6% 2% 6% 2%;}
+#footerwrap #footer .btn li{ float:left; width:48%; padding-left:2%}
+#footerwrap #footer .btn img{ width:100%;}
+
+#footerwrap #bottom{bottom:0; width:100%;}
+#footerwrap #bottom ul{ width:100%;}
+#footerwrap #bottom ul li{ width:25%; float:left; text-align:center; }
+#footerwrap #bottom ul .last{ border-right:none}
+#footerwrap #bottom ul li img{width:100%; height:auto; margin:0 auto;}

@@ -40,14 +40,20 @@ class Board extends CI_Controller {
 		$page = ( $this->getparam['page'] ? $this->getparam['page'] : 1 ) ;
 		$data = array('method'=>$method , 'page'=>$page , 'title'=>$this->param['title']  );
 
-		$this->load->view($this->type.'/board/top.php', $data);
+        if( $this->layout_mobile){
 
-		if( method_exists($this, $method) )
-		{
-			$this->{"{$method}"}();
-		}
+            if (method_exists($this, $method)) {
+                $this->{"{$method}"}();
+            }
+        }else {
+            $this->load->view($this->type . '/board/top.php', $data);
 
-		$this->load->view($this->type.'/board/bottom.php', $data);
+            if (method_exists($this, $method)) {
+                $this->{"{$method}"}();
+            }
+
+            $this->load->view($this->type . '/board/bottom.php', $data);
+        }
 	}
 
 	function lists() {						

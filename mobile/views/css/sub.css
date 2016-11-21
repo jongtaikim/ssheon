@@ -1,0 +1,74 @@
+@charset "utf-8";
+/* CSS Document */
+
+
+
+/* header */
+#header {z-index:1001;overflow:hidden;position:relative;top:0;left:0; clear:both; height:200px;}
+#header #top{ position:absolute; top:0;z-index:1002; width:100%; height:60px; }
+#header #top .top{ position:relative; width:100%;}
+#header #top .top .logo{ margin:8px auto; width:110px; padding:18px 0 0 35px;}
+#header #top .top .logo img{ width:100%; height:auto;}
+#header #top .top .menu{position:absolute; top:24px; left:24px;}
+#header #top .top .menu img{  width:40px; height:auto;}
+/* header E */
+
+#container #contents{}
+#container #contents .img{padding:0px;}
+#container #contents .img img{width:100%; height:auto}
+#container #contents .img_top{padding-top:15%;}
+#container #contents .img_top img{width:100%; height:auto}
+#container #contents .img_bottom{padding-bottom:15%;}
+#container #contents .img_bottom img{width:100%; height:auto}
+#container #contents .img_all{padding:15% 0 15% 0;}
+#container #contents .img_all img{width:100%; height:auto}
+
+#container #contents .title{padding-bottom:15%;}
+#container #contents .title img{width:100%; height:auto}
+
+#container #contents .table{ padding:0 2% 15% 2%;}
+#container #contents .table table{ text-align:center;}
+#container #contents .table table tr{ padding:2% 0 2% 0;}
+#container #contents .table table td{ padding:2% 3% 2% 3%; border-bottom:1px solid #ddd; font-size:1.8em; line-height:1.6em; letter-spacing:-0.05em; color:#888;}
+#container #contents .table table th{ background-color:#999; color:#fff; font-size:1.8em; line-height:1.6em; letter-spacing:-0.05em; padding:10px 0 10px 0; border-right:1px solid #fff;}
+#container #contents .table table .text_left{ font-size:1.8em; line-height:1.6em; letter-spacing:-0.05em;text-align:left; color:#444;padding:10px;}
+#container #contents .table table .text_left span{ font-weight:bold;}
+#container #contents .table table .open{ background-color:#eee;}
+#container #contents .table table .text_notice{ text-align:justify; color:#444; border-right:1px solid #ddd; border-left:1px solid #ddd;}
+
+#container #contents .table .button{ width:100%; padding:3% 0 3% 0}
+#container #contents .table .button button{ width:100%; padding:10% 40px 10% 40px;background-color:#444; border:0; font-size:1.8em;}
+#container #contents .table .button button span{ color:#ddd; }
+#container #contents .table .button .prev{ float:left}
+#container #contents .table .button .next{ float:right}
+#container #contents .table .button .list{ float:right}
+
+
+#container #contents .table_guide{ padding:5% 2% 0 2%;}
+#container #contents .table_guide table{ text-align:center;}
+#container #contents .table_guide table a{color:#333;}
+#container #contents .table_guide table tr{ padding:2% 0 2% 0;}
+#container #contents .table_guide table td{ padding:2% 3% 2% 3%; border:1px solid #ddd; font-size:1.3em; line-height:1.6em; letter-spacing:-0.05em; color:#888; border-right:none; border-top:none; }
+#container #contents .table_guide table th{ background-color:#eee; color:#333; font-size:1.3em; line-height:1.6em; letter-spacing:-0.05em; padding:10px 0 10px 0; border:1px solid #ddd; border-right:none;text-align: center}
+#container #contents .table_guide table th span{ font-size:0.9em; color:#666;}
+#container #contents .table_guide table .border_r{ border-right:1px solid #ddd}
+#container #contents .table_guide table .border_t{ border-top:1px solid #ddd}
+#container #contents .table_guide table .text_left{ font-size:1.3em; line-height:1.3em; letter-spacing:-0.05em; text-align:left; color:#444;padding:10px;}
+#container #contents .table_guide table .text_left span{ font-weight:bold;}
+#container #contents .table_guide p{ text-align:center; padding:2% 2% 15% 2%; color:#666;}
+
+#container #contents .table_guide2{ padding:5% 2% 0 2%;}
+#container #contents .table_guide2 table{ text-align:justify;}
+#container #contents .table_guide2 table a{color:#333;}
+#container #contents .table_guide2 table tr{ padding:2% 0 2% 0;}
+#container #contents .table_guide2 table td{ padding:10px; border:1px solid #ddd; font-size:1.3em; line-height:1.6em; letter-spacing:-0.05em; color:#666; background-color:#eee;}
+#container #contents .table_guide2 table td{ ;text-align: center;}
+
+
+
+
+
+
+
+
+

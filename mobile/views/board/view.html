@@ -12,10 +12,10 @@
             </tr>
             <tr>
                 <td class="text_left"><span>{row.title}</span></td>
-                <td>{row.udate}</td>
+                <td>{=substr(row.udate,2,8)}</td>
             </tr>
             <tr>
-                <td class="text_notice" colspan="2">{=nl2br(row.content)}
+                <td class="text_notice" colspan="2">{=(row.content)}
                 </td>
             </tr>
         </table>

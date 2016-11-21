@@ -35,8 +35,8 @@
     <body>
 
 
-    <div class="autoheight modal-backdrop opa20" id="backd" ></div>
-    <div id="wrap">
+<!--    <div class="autoheight modal-backdrop opa20" id="backd" ></div>-->
+    <div id="wrap" class="">
         <div id="header" class="">
             <!-- top -->
             <div id="top">
@@ -144,10 +144,19 @@
     $(window).resize(function(){
         winset()
     });
+
+    setTimeout(function () {
+       // $('#wrap').fadeIn(100);
+    },200);
+
     setTimeout(function () {
         winset();
-        $('#backd').fadeOut(100);
+
+        $('#backd').fadeOut(200);
     },400);
+
+
+
     $(document).ready(function(){
 
     });

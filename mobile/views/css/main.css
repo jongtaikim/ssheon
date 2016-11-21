@@ -1,0 +1,27 @@
+@charset "utf-8";
+/* CSS Document */
+ 
+
+
+/* header */
+#header {z-index:1001;overflow:hidden;position:relative;top:0;left:0; clear:both;}
+#header #top{ position:absolute; top:0;z-index:1002; width:100%; height:60px; }
+#header #top .top{ position:relative; width:100%;}
+#header #top .top .logo{ margin:8px auto; width:110px; padding:18px 0 0 35px;}
+#header #top .top .logo img{ width:100%; height:auto;}
+#header #top .top .menu{position:absolute; top:24px; left:24px;}
+#header #top .top .menu img{  width:40px; height:auto;}
+
+#header #slide{ position:relative;}
+#header #slide .navi{ width:16%; position:absolute; bottom:2%; z-index:1003; margin:0 42% 0 42%;}
+#header #slide .navi li{ float:left; width:33%;}
+#header #slide .navi img{ width:74%;}
+#header #slide .slide img{ width:100%; height:auto;}
+#header #slide .text{ width:50%; position:absolute;z-index:1003; margin:45% 25% 45% 25%;}
+#header #slide .text img{ width:100%;}
+/* header E */
+
+#container{ width:100%; z-index:999; overflow:hidden; position:relative; padding:0;}
+#container #contents .img{padding:0;}
+#container #contents .img img{width:100%; height:auto}
+
