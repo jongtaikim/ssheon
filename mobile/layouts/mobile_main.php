@@ -12,7 +12,7 @@
         <script src="/asset/admin/js/jquery.validationEngine.js"></script>
         <link rel="stylesheet" href="/asset/animate.css/animate.css" type="text/css" />
         <link rel="stylesheet" href="/asset/font-awesome/css/font-awesome.min.css" type="text/css" />
-        <link rel="stylesheet" href="/asset/bootstrap-4.0.0-alpha.5-dist/css/bootstrap.css" type="text/css" />
+        <link rel="stylesheet" href="/asset/bootstrap-4.0.0-alpha.5-dist/css/bootstrap.css?v=3" type="text/css" />
 
 
         <link rel="stylesheet" href="/asset/styles/app.css" type="text/css" />
@@ -23,7 +23,7 @@
         <link rel="stylesheet" href="/asset/libs/jquery/select2-bootstrap-theme/dist/select2-bootstrap.4.css" type="text/css" />
 
         {? MAIN}
-        <link rel="stylesheet" href="/mobile/views/css/main.css?v=1" type="text/css" media="screen" />
+        <link rel="stylesheet" href="/mobile/views/css/main.css" type="text/css" media="screen" />
         {:}
         <link rel="stylesheet" href="/mobile/views/css/sub.css" type="text/css" media="screen" />
         {/}
@@ -34,9 +34,9 @@
     </head>
     <body>
 
-
+<div class="pos_r" style="max-width:660px;margin:0 auto">
 <!--    <div class="autoheight modal-backdrop opa20" id="backd" ></div>-->
-    <div id="wrap" class="">
+    <div id="wrap" class="" >
         <div id="header" class="">
             <!-- top -->
             <div id="top">
@@ -56,11 +56,11 @@
                     <li data-target="#slide" data-slide-to="1"></li>
                     <li data-target="#slide" data-slide-to="2"></li>
                 </ol>
-                <ul class="auto carousel-inner carousel-inner_top">
-                    <li class="carousel-item active"><div class="text wow fadeInDown" data-wow-delay="1s"><img src="/mobile/views/images/text.png"></div><img src="/mobile/views/images/slide_01.png"></li>
+                <ul class="auto carousel-inner carousel-inner_top" style="margin:0 auto">
+                    <li class="carousel-item active"><div class="text wow fadeInDown" data-wow-delay="1s"><img src="/mobile/views/images/text.png"></div><img src="/mobile/views/images/slide_01.png" class="main_vi"></li>
 
-                <li class="carousel-item"><div class="text "><img src="/mobile/views/images/text.png"></div><img src="/mobile/views/images/slide_02.png"></li>
-                <li class="carousel-item"><div class="text "><img src="/mobile/views/images/text.png"></div><img src="/mobile/views/images/slide_03.png"></li>
+                <li class="carousel-item"><div class="text "><img src="/mobile/views/images/text.png"></div><img src="/mobile/views/images/slide_02.png" class="main_vi"></li>
+                <li class="carousel-item"><div class="text "><img src="/mobile/views/images/text.png"></div><img src="/mobile/views/images/slide_03.png" class="main_vi"></li>
 
             </ul>
 
@@ -98,7 +98,7 @@
                 </ul>
             </div>
         </div>
-        <div id="bottom" class="pos_f " style="bottom:0px;z-index: 2000;background-color: #000">
+        <div id="bottom" class="pos_1f " style="bottom:0px;z-index: 2000;background-color: #000;max-width:660px">
             <ul>
                 <li><a href="tel:010-8924-1352"><img src="/mobile/views/images/btn_call.png"></a></li>
                 <li><a href="http://plus.kakao.com/home/@수수헌" target="_blank"><img src="/mobile/views/images/btn_kakao.png"></a></li>
@@ -109,7 +109,7 @@
     </div>
 </div>
 
-<div id="toggle" class="hide">
+<div id="toggle" class="hide" >
 	<div class="toggle">
     	<div class="menu"><a href="javascript:$('#toggle').fadeOut(200);$('#menu_btn').show()"><img src="/mobile/views/images/closed.png"></a></div>
     	<ul>
@@ -123,27 +123,34 @@
     </div>
 </div>
 
-
+</div>
 
 
 
 <script type="text/javascript">
     function winset() {
         $('.autoheight').height($(window).height());
-        $('#footer').css('margin-bottom',$('#bottom').height());
+        //$('#footer').css('margin-bottom',$('#bottom').height());
         if($(window).height() <=400) {
-            $('#bottom').hide();
+            //$('#bottom').hide();
+            $('.main_vi').css('width','100%');
         }else{
-            $('#bottom').show();
-        }
-        if($(window).height() <=700){
-            $('#slide').css('oveflow','hidden').height($(window).height()-$('#bottom').height());
-        }
+            /*$('#bottom').show();*/
 
+           if($(window).height() >=400) {
+               $('#slide').css('oveflow','hidden').height($(window).height());
+               $('.main_vi').css('max-width', '300%').height($(window).height() - $('#bottom').height() + 40);
+            }
+
+            /*$('.main_vi').css('width','100%');*/
+        }
     }
     $(window).resize(function(){
         winset()
     });
+    var this_sroll = '';
+
+
 
     setTimeout(function () {
        // $('#wrap').fadeIn(100);
@@ -155,10 +162,14 @@
         $('#backd').fadeOut(200);
     },400);
 
-
-
-    $(document).ready(function(){
-
+    $(window).scroll(function(){
+        console.log(this_sroll+' / '+$(window).scrollTop());
+        if(this_sroll < $(window).scrollTop() ){
+            $('#bottom').hide();
+        }else{
+            $('#bottom').show();
+        }
+        this_sroll = $(window).scrollTop();
     });
 </script>
 <script src="/asset/libs/jquery/tether/dist/js/tether.min.js"></script>

@@ -1,6 +1,6 @@
 @charset "utf-8";
 /* CSS Document */
- 
+
 
 
 /* header */
@@ -13,7 +13,7 @@
 #header #top .top .menu img{  width:40px; height:auto;}
 
 #header #slide{ position:relative;}
-#header #slide .navi{ width:16%; position:absolute; bottom:2%; z-index:1003; margin:0 42% 0 42%;}
+#header #slide .navi{ width:16%; position:absolute; bottom:10%; z-index:1003; margin:0 42% 0 42%;}
 #header #slide .navi li{ float:left; width:33%;}
 #header #slide .navi img{ width:74%;}
 #header #slide .slide img{ width:100%; height:auto;}

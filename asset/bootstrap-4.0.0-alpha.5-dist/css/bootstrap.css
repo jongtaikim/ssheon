@@ -5889,7 +5889,7 @@ button.close {
 
 .carousel-indicators {
   position: absolute;
-  bottom: 20px;
+  bottom: 50px;
   left: 50%;
   z-index: 15;
   width: 60%;
@@ -5901,20 +5901,20 @@ button.close {
 
 .carousel-indicators li {
   display: inline-block;
-  width: 24px;
-  height: 24px;
+  width: 20px;
+  height: 20px;
   margin: 5px;
 
   text-indent: -999px;
   cursor: pointer;
   background-color: transparent;
   border: 1px solid #fff;
-  border-radius: 24px;
+  border-radius: 20px;
 }
 
 .carousel-indicators .active {
-  width: 24px;
-  height: 24px;
+  width: 20px;
+  height: 20px;
 
   background-color: #fff;
 }
