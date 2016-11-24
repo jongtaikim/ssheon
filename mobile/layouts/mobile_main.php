@@ -128,7 +128,7 @@
 
 
 <script type="text/javascript">
-    function winset() {
+    function winset(init) {
         $('.autoheight').height($(window).height());
         //$('#footer').css('margin-bottom',$('#bottom').height());
         if($(window).height() <=400) {
@@ -136,10 +136,11 @@
             $('.main_vi').css('width','100%');
         }else{
             /*$('#bottom').show();*/
-
-           if($(window).height() >=400) {
-               $('#slide').css('oveflow','hidden').height($(window).height());
-               $('.main_vi').css('max-width', '300%').height($(window).height() - $('#bottom').height() + 40);
+            if(init){
+               if($(window).height() >=400) {
+                   $('#slide').css('oveflow','hidden').height($(window).height());
+                   $('.main_vi').css('max-width', '300%').height($(window).height() - $('#bottom').height() + 40);
+                }
             }
 
             /*$('.main_vi').css('width','100%');*/
@@ -157,20 +158,14 @@
     },200);
 
     setTimeout(function () {
-        winset();
+
 
         $('#backd').fadeOut(200);
     },400);
 
-    $(window).scroll(function(){
-        console.log(this_sroll+' / '+$(window).scrollTop());
-        if(this_sroll < $(window).scrollTop() ){
-            $('#bottom').hide();
-        }else{
-            $('#bottom').show();
-        }
-        this_sroll = $(window).scrollTop();
-    });
+    
+
+    winset('y');
 </script>
 <script src="/asset/libs/jquery/tether/dist/js/tether.min.js"></script>
 <script src="/asset/bootstrap-4.0.0-alpha.5-dist/js/bootstrap.js"></script>
