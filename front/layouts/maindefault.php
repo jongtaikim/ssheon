@@ -2,7 +2,7 @@
 <html>
 <head>
 <meta charset="utf-8">
-<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="viewport" content="width=device-width, initial-scale=0.3, maximum-scale=0.5, minimum-scale=0.3, user-scalable=yes, target-densitydpi=medium-dpi">
 <? if ( $_SERVER['PHP_SELF'] =="/index.php" ) : ?>
 <link rel="stylesheet" href="<?=FRONT_CSS_DIR?>/main.css" type="text/css" media="screen" />
