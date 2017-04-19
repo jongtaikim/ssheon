@@ -137,7 +137,7 @@
 											<? if ( $row['sprinc'] != 0 ) :?>
 											<select name="realpan_princ" id="realpan_princ" onchange="tot_princ<?=$kk?>(this.value);">
 												<option value=0||0||0>선택
-												<? for ( $ii=1 ; $ii<=8 ; $ii++ ) :?>
+												<? for ( $ii=1 ; $ii<=20 ; $ii++ ) :?>
 												<option value="<?=$row['sprinc']?>||<?=$ii?>||<?=$row['name']?>"><?=$ii?>
 												<? endfor;?>
 											</select>
